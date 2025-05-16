@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca de Dados</title>
+</head>
+<body>
+    <h1>Busca de Dados</h1>
+    <form action="/pesquisar" method="get">
+        <input type="text" name="query" placeholder="Digite o termo para buscar">
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    <h2>Resultados</h2>
+    {% if resultados %}
+        <ul>
+            {% for resultado in resultados %}
+                <li><a href="{{ resultado.url }}" target="_blank">{{ resultado.titulo }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum resultado encontrado.</p>
+    {% endif %}
+
+    <h2>Adicionar Novo Site</h2>
+    <form action="/adicionar" method="post">
+        <input type="text" name="titulo" placeholder="Título">
+        <input type="url" name="url" placeholder="URL">
+        <button type="submit">Adicionar</button>
+    </form>
+
+    {% if mensagem %}
+        <p>{{ mensagem }}</p>
+    {% endif %}
+</body>
+</html>
