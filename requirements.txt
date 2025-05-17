@@ -1,1 +1,9 @@
 flask
+gunicorn  # Servidor WSGI para produção
+Flask-Compress  # Compressão de resposta HTTP
+gevent  # Tornar requisições assíncronas
+eventlet  # Outra opção para otimizar concorrência
+redis  # Cache rápido para melhor tempo de resposta
+brotli  # Melhor compressão do que Gzip
+SQLAlchemy  # ORM poderoso para manipulação de banco
+psycopg2  # Driver otimizado para PostgreSQL
